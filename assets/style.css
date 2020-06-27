@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.custom-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-header-text {
+  font-size: 3rem;
+}
+
+.card-custom {
+  padding: 5px 0px 5px 0px;
+}
+
+.form-custom {
+  margin-top: 10px;
+}
+
+.previous-searches {
+  margin-left: 1rem!important;
+  margin-right: 1rem!important;
+}

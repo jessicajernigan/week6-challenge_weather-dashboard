@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=`, initial-scale=1.0">
+  <meta name="viewport">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
@@ -15,12 +15,50 @@
 </head>
 
 <body>
+  <header class="navbar custom-header navbar-expand-lg navbar-dark bg-dark">
+    <h1 class="navbar-brand custom-header-text" href="#">Weather Dashboard</h1>
+  </header>
+
+  <main class="container">
+    <div class="row">
+      <div class="col-4 search-column">
+        <div class="card card-custom">
+          <h3 class="card-header text-uppercase">Search by City</h3>
+          <form id="search-form" class="form-inline form-custom">
+            <div class="form-group mx-sm-3 mb-2">
+              <input type="city" class="field-custom form-control" id="city-input" placeholder="Your City">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2"><span class="oi oi-magnifying-glass"></span></button>
+          </form>
+          <div id="previous-searches" class="previous-searches">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card">
+          <h2 id="current-city-displayed" class="card-header"></h2>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p id="current-city-temp" class="card-text">Temp:</p>
+            <p id="current-city-humidity" class="card-text">Humidity:</p>
+            <p id="current-city-wind" class="card-text">Wind Speed:</p>
+            <p id="current-city-uv" class="card-text">UV Index:</p>
+          </div>
+        </div>
+        <br>
+        <h3>5 Day Forecast</h3>
+      </div>
+    </div>
+  </main>
+
+
 
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="assets/script.js"></script>
+  <script src="./assets/script.js"></script>
 </body>
 
 </html>
