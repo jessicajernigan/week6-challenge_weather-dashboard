@@ -19,7 +19,7 @@ function displayStoredCities() {
       displayCurrentWeather(city);
     }
     previousSearches.appendChild(newBtn);
-    newBtn.classList = "btn btn-secondary btn-lg btn-block city-btn";
+    newBtn.classList = "btn btn-outline-primary btn-lg btn-block city-btn";
     newBtn.setAttribute("id", "city-" + citiesArray[i])
     newBtn.innerHTML = citiesArray[i];
   }
@@ -44,7 +44,7 @@ function formSubmitHandler(event) {
       displayCurrentWeather(city);
     }
     previousSearches.appendChild(newBtn);
-    newBtn.classList = "btn btn-secondary btn-lg btn-block city-btn";
+    newBtn.classList = "btn btn-outline-primary btn-lg btn-block city-btn";
     newBtn.setAttribute("id", "city-" + currentCity)
     newBtn.innerHTML = currentCity;
   }
@@ -57,6 +57,7 @@ function formSubmitHandler(event) {
 
 
 function displayCurrentWeather(currentCity) {
+  cityDisplayed.innerHTML = currentCity;
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' +
     currentCity +
     '&appid=64691d0a710691e67381e1108d1f040d&units=imperial'
@@ -197,7 +198,6 @@ function displayDate() {
 function showForecast() {
   document.getElementById("forecast-container").style.display = "inline-block";
 };
-
 
 displayStoredCities();
 searchField.addEventListener("submit", formSubmitHandler);
