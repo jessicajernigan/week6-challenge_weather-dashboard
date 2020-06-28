@@ -69,7 +69,7 @@ function displayCurrentWeather(currentCity) {
       // console.log("temp: " + weatherResponse.main.feels_like, "humidity: " + weatherResponse.main.humidity, "wind speed: " + weatherResponse.wind.speed, "longitude: " + weatherResponse.coord.lon, "latitude: " + weatherResponse.coord.lat, "icon" + weatherResponse.weather.icon);
 
       fetch(
-        'http://api.openweathermap.org/data/2.5/uvi?appid=64691d0a710691e67381e1108d1f040d&lat=' +
+        'https://api.openweathermap.org/data/2.5/uvi?appid=64691d0a710691e67381e1108d1f040d&lat=' +
         weatherResponse.coord.lat +
         '&lon=' +
         weatherResponse.coord.lon
