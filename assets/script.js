@@ -51,7 +51,7 @@ function formSubmitHandler(event) {
   cityInputField.value = "";
 
   displayCurrentWeather(currentCity)
-  fiveDayForecast(currentCity);
+  displayFiveDayForecast(currentCity);
   displayDate();
 };
 
@@ -83,7 +83,6 @@ function displayCurrentWeather(currentCity) {
           var humidityValue = weatherResponse.main.humidity;
           var windSpeedValue = weatherResponse.wind.speed;
           var uvIndexValue = JSON.stringify(uvIndex);
-
           var weatherIcon = weatherResponse.weather[0].icon;
           var iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
 
@@ -93,20 +92,27 @@ function displayCurrentWeather(currentCity) {
           currentCityHumidity.textContent = humidityValue;
           currentCityWind.textContent = windSpeedValue;
           currentCityUV.textContent = uvIndexValue;
+          conditionalUVIndexStyling(uvIndexValue);
           currentCityIcon.setAttribute("src", iconUrl);
           cityDisplayed.innerHTML = currentCity;
         })
     })
-  fiveDayForecast(currentCity);
+  displayFiveDayForecast(currentCity);
   showForecast();
   displayDate();
 }
 
+function conditionalUVIndexStyling(uvIndexValue) {
+  if (uvIndexValue < 3) {
+    currentCityUV.setAttribute("class", "badge badge-success")
+  } else if (uvIndexValue > 7) {
+    currentCityUV.setAttribute("class", "badge badge-danger")
+  } else if (uvIndexValue >= 3 && uvIndexValue <= 7) {
+    currentCityUV.setAttribute("class", "badge badge-warning")
+  }
+};
 
-
-
-
-function fiveDayForecast(currentCity) {
+function displayFiveDayForecast(currentCity) {
   cityDisplayed.innerHTML = currentCity;
   fetch('https://api.openweathermap.org/data/2.5/forecast?q=' +
     currentCity +
