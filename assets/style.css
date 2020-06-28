@@ -24,3 +24,12 @@
   margin-left: 1rem!important;
   margin-right: 1rem!important;
 }
+
+#five-day-container {
+  justify-content: space-between;
+}
+
+
+/* #forecast-container {
+  display: none;
+} */

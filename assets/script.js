@@ -10,8 +10,7 @@ var currentCityIcon = document.getElementById('weather-icon');
 
 
 
-
-var formSubmitHandler = function (event) {
+function formSubmitHandler (event) {
   event.preventDefault();
   var currentCity = cityInputField
     .value
@@ -31,12 +30,9 @@ var formSubmitHandler = function (event) {
   newBtn.innerHTML = currentCity;
   cityInputField.value = "";
 
-  console.log(currentCity);
-
-
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' +
     currentCity +
-    '&appid=64691d0a710691e67381e1108d1f040d'
+    '&appid=64691d0a710691e67381e1108d1f040d&units=imperial'
   )
 
     .then(function (weatherResponse) {
@@ -56,7 +52,6 @@ var formSubmitHandler = function (event) {
         })
         .then(function (response) {
           var uvIndex = response.value
-
           var temperatureValue = JSON.stringify(weatherResponse.main.feels_like);
           var humidityValue = JSON.stringify(weatherResponse.main.humidity);
           var windSpeedValue = JSON.stringify(weatherResponse.wind.speed)
@@ -75,14 +70,16 @@ var formSubmitHandler = function (event) {
           // currentCityIcon.setAttribute("src", iconUrl);
         })
     })
-    fiveDayForecast(currentCity);
+  fiveDayForecast(currentCity);
+  showForecast();
+  displayDate();
 };
 
 
 function fiveDayForecast(currentCity) {
   fetch('https://api.openweathermap.org/data/2.5/forecast?q=' +
     currentCity +
-    '&appid=64691d0a710691e67381e1108d1f040d'
+    '&appid=64691d0a710691e67381e1108d1f040d&units=imperial'
   )
     .then(function (forecastResponse) {
       return forecastResponse.json();
@@ -92,10 +89,46 @@ function fiveDayForecast(currentCity) {
     })
 };
 
+function showForecast() {
+  document.getElementById("forecast-container").style.display = "inline-block";
+}
 
+function displayDate () {
+  var prettyDate = moment().format("dddd, MMMM Do");
+  moment(prettyDate).toString;
+  // console.log(prettyDate);
+  var todayDiv = $("#currentDay");
+  todayDiv.text(prettyDate);
 
+  var fiveDay1 = moment().add(1, 'day').format("l");
+  // console.log(tomorrow);
+  moment(fiveDay1).toString;
+  var forecastDate1 = $("#date1");
+  forecastDate1.text(fiveDay1);
 
+  var fiveDay2 = moment().add(2, 'day').format("l");
+  // console.log(tomorrow);
+  moment(fiveDay2).toString;
+  var forecastDate2 = $("#date2");
+  forecastDate2.text(fiveDay2);
 
+  var fiveDay3 = moment().add(3, 'day').format("l");
+  // console.log(tomorrow);
+  moment(fiveDay3).toString;
+  var forecastDate3 = $("#date3");
+  forecastDate3.text(fiveDay3);
 
-// renderPastCities();
+  var fiveDay4 = moment().add(4, 'day').format("l");
+  // console.log(tomorrow);
+  moment(fiveDay4).toString;
+  var forecastDate4 = $("#date4");
+  forecastDate4.text(fiveDay4);
+
+  var fiveDay5 = moment().add(5, 'day').format("l");
+  // console.log(tomorrow);
+  moment(fiveDay5).toString;
+  var forecastDate5 = $("#date5");
+  forecastDate5.text(fiveDay5);
+};
+
 searchField.addEventListener("submit", formSubmitHandler);

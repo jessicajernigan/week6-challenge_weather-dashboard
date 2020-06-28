@@ -36,15 +36,13 @@
         </div>
       </div>
 
-      <div class="col-lg-8">
+      <div class="col-lg-8" id="forecast-container">
         <div class="card">
           <h2 id="current-city-displayed" class="card-header">
-            <div>
-              <img id="weather-icon" src="" alt="">
-            </div>
+            <!-- <img id="weather-icon" src="" alt=""> -->
           </h2>
           <div class="card-body">
-            <h5 class="card-title">Current Date and Time: </h5>
+            <h5 class="card-title">Current Weather Conditions for <span id="currentDay"></span></h5>
             <p class="card-text"><strong>Temp: </strong><span id="current-city-temp"></span>&#8457;</p>
             <p class="card-text"><strong>Humidity: </strong><span id="current-city-humidity"></span>%</p>
             <p class="card-text"><strong>Wind Speed: </strong><span id="current-city-wind"></span>MPH</p>
@@ -52,7 +50,71 @@
           </div>
         </div>
         <br>
-        <h3>5 Day Forecast</h3>
+        
+        <div class="row">
+          <!-- <div class="col-lg-8"> -->
+            <h3>5 Day Forecast</h3>
+          <!-- </div> -->
+        </div>
+
+        <div class="row" id="five-day-container">
+
+            <div id="five-day-1" class="card text-white bg-secondary mb-2" style="max-width: 9rem; text-align: center;">
+              <div id="date1" class="card-header"></div>
+              <div class="card-body">
+                <h5 class="card-title">Temp</h5>
+                <p class="card-text">#&#8457;</p>
+
+                <h5 class="card-title">Humidity</h5>
+                <p class="card-text">#%</p>
+              </div>
+            </div>
+
+            <div id="five-day-2" class="card text-white bg-secondary mb-2" style="max-width: 9rem; text-align: center;">
+              <div id="date2" class="card-header"></div>
+              <div class="card-body">
+                <h5 class="card-title">Temp</h5>
+                <p class="card-text">#&#8457;</p>
+
+                <h5 class="card-title">Humidity</h5>
+                <p class="card-text">#%</p>
+              </div>
+            </div>
+
+            <div id="five-day-3" class="card text-white bg-secondary mb-2" style="max-width: 9rem; text-align: center;">
+              <div id="date3" class="card-header"></div>
+              <div class="card-body">
+                <h5 class="card-title">Temp</h5>
+                <p class="card-text">#&#8457;</p>
+
+                <h5 class="card-title">Humidity</h5>
+                <p class="card-text">#%</p>
+              </div>
+            </div>
+
+            <div id="five-day-4" class="card text-white bg-secondary mb-2" style="max-width: 9rem; text-align: center;">
+              <div id="date4" class="card-header"></div>
+              <div class="card-body">
+                <h5 class="card-title">Temp</h5>
+                <p class="card-text">#&#8457;</p>
+
+                <h5 class="card-title">Humidity</h5>
+                <p class="card-text">#%</p>
+              </div>
+            </div>
+
+            <div id="five-day-5" class="card text-white bg-secondary mb-2" style="max-width: 9rem; text-align: center;">
+              <div id="date5" class="card-header"></div>
+              <div class="card-body">
+                <h5 class="card-title">Temp</h5>
+                <p class="card-text">#&#8457;</p>
+
+                <h5 class="card-title">Humidity</h5>
+                <p class="card-text">#%</p>
+              </div>
+            </div>
+        </div>
+
       </div>
     </div>
   </main>
