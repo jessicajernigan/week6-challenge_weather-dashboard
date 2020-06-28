@@ -52,7 +52,6 @@ function formSubmitHandler(event) {
 
   displayCurrentWeather(currentCity)
   fiveDayForecast(currentCity);
-  showForecast();
   displayDate();
 };
 
@@ -95,9 +94,11 @@ function displayCurrentWeather(currentCity) {
           currentCityWind.textContent = windSpeedValue;
           currentCityUV.textContent = uvIndexValue;
           currentCityIcon.setAttribute("src", iconUrl);
+          cityDisplayed.innerHTML = currentCity;
         })
     })
   fiveDayForecast(currentCity);
+  showForecast();
   displayDate();
 }
 
@@ -106,6 +107,7 @@ function displayCurrentWeather(currentCity) {
 
 
 function fiveDayForecast(currentCity) {
+  cityDisplayed.innerHTML = currentCity;
   fetch('https://api.openweathermap.org/data/2.5/forecast?q=' +
     currentCity +
     '&appid=64691d0a710691e67381e1108d1f040d&units=imperial'
@@ -146,9 +148,7 @@ function fiveDayForecast(currentCity) {
     });
 };
 
-function showForecast() {
-  document.getElementById("forecast-container").style.display = "inline-block";
-};
+
 
 function displayDate() {
   var prettyDate = moment().format("dddd, MMMM Do");
@@ -186,6 +186,10 @@ function displayDate() {
   moment(fiveDay5).toString;
   var forecastDate5 = $("#date5");
   forecastDate5.text(fiveDay5);
+};
+
+function showForecast() {
+  document.getElementById("forecast-container").style.display = "inline-block";
 };
 
 
