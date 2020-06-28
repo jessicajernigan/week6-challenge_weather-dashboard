@@ -15,4 +15,4 @@ THEN I am again presented with current and future conditions for that city
 
 ![website screenshot]()
 
-[Link to live page](https://jessicajernigan.github.io/week6__________)
+[Link to live page](https://jessicajernigan.github.io/week6-challenge_weather-dashboard/)

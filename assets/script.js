@@ -121,8 +121,8 @@ function fiveDayForecast(currentCity) {
       var dates = [];
       // results is data from api
       for (var i = 0; i < forecastResponse.list.length; i++) {
-        var isTwelve = forecastResponse.list[i]["dt_txt"].split(" ")[1].split(":")[0] == 12;
-        if (isTwelve) {
+        var isThree = forecastResponse.list[i]["dt_txt"].split(" ")[1].split(":")[0] == 15;
+        if (isThree) {
           // populate with weather data from this object
           dates.push(forecastResponse.list[i]);
         }
