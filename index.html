@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="https://github.com/yuvraaaj/openweathermap-api-icons" />
   <link rel="stylesheet" href="./assets/style.css" />
   <title>Weather Dashboard</title>
 </head>
@@ -37,13 +38,17 @@
 
       <div class="col-lg-8">
         <div class="card">
-          <h2 id="current-city-displayed" class="card-header"></h2>
+          <h2 id="current-city-displayed" class="card-header">
+            <div>
+              <img id="weather-icon" src="" alt="">
+            </div>
+          </h2>
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p id="current-city-temp" class="card-text">Temp:</p>
-            <p id="current-city-humidity" class="card-text">Humidity:</p>
-            <p id="current-city-wind" class="card-text">Wind Speed:</p>
-            <p id="current-city-uv" class="card-text">UV Index:</p>
+            <h5 class="card-title">Current Date and Time: </h5>
+            <p class="card-text"><strong>Temp: </strong><span id="current-city-temp"></span>&#8457;</p>
+            <p class="card-text"><strong>Humidity: </strong><span id="current-city-humidity"></span>%</p>
+            <p class="card-text"><strong>Wind Speed: </strong><span id="current-city-wind"></span>MPH</p>
+            <p class="card-text"><strong>UV Index: </strong><span id="current-city-uv"></span></p>
           </div>
         </div>
         <br>
