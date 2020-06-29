@@ -14,8 +14,9 @@ function displayStoredCities() {
     var previousSearches = document.getElementById('previous-searches'); // Identifies the container for the "city buttons" as a variable.
     var newBtn = document.createElement("button");
 
-    newBtn.onclick = function () {
+    newBtn.onclick = function (event) {
       var city = event.target.textContent;
+      console.log(city);
       displayCurrentWeather(city);
     }
     previousSearches.appendChild(newBtn);
@@ -39,8 +40,11 @@ function formSubmitHandler(event) {
 
     var previousSearches = document.getElementById('previous-searches'); // Identifies the container for the "city buttons" as a variable.
     var newBtn = document.createElement("button");
-    newBtn.onclick = function () {
-      var city = event.target.textContent;
+    newBtn.setAttribute("value", currentCity);
+    
+    newBtn.onclick = function (event) {
+      var city = $(this).attr("value"); // After setting the attribute, use jQuery to target said attribute. 
+      console.log(city);
       displayCurrentWeather(city);
     }
     previousSearches.appendChild(newBtn);
